@@ -1,5 +1,6 @@
 package net.grosinger.bookmetasearch.amazoninterface;
 
+import net.grosinger.bookmetasearch.amazoninterface.http.SearchHandler;
 import org.apache.log4j.Logger;
 import org.eclipse.jetty.server.Server;
 

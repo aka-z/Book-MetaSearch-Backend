@@ -27,6 +27,10 @@ import org.apache.commons.codec.binary.Base64;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+/**
+ * Interface with the WSDL. Originally retrieved from
+ * https://forums.aws.amazon.com/servlet/JiveServlet/download/40-33731-141120-2645/awshandlerresolver.java
+ */
 public class AwsHandlerResolver implements HandlerResolver {
     private String awsSecretKey;
 
