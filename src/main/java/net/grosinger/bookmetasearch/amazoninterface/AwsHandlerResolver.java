@@ -1,4 +1,4 @@
-package net.grosinger.bookmetasearch.amazon;
+package net.grosinger.bookmetasearch.amazoninterface;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;

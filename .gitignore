@@ -22,3 +22,6 @@ target/
 *.jar
 *.war
 *.ear
+
+# Project specific
+src/main/resources/api-keys.properties

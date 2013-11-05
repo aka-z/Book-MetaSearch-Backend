@@ -1,4 +1,4 @@
-package net.grosinger.bookmetasearch.amazon;
+package net.grosinger.bookmetasearch.amazoninterface;
 
 import com.ECS.client.jax.AWSECommerceService;
 import com.ECS.client.jax.AWSECommerceServicePortType;

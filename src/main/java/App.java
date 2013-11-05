@@ -1,12 +1,12 @@
 import com.ECS.client.jax.Item;
-import net.grosinger.bookmetasearch.amazon.AmazonAffiliatesSearch;
+import net.grosinger.bookmetasearch.amazoninterface.AmazonAffiliatesSearch;
 
 import java.util.List;
 
 public class App {
-    private static final String ACCESS_KEY_ID = "<YOUR ACCESS KEY>";
-    private static final String ASSOCIATES_ID = "<YOUR ASSOCIATE ID>";
-    private static final String SECRET_KEY = "YOUR SECRET KEY";
+    private static final String ACCESS_KEY_ID = "AKIAJT5Y7YRFBIPKQ6QA";
+    private static final String ASSOCIATES_ID = "boomet03-20";
+    private static final String SECRET_KEY = "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";
 
     public static void main(String[] args) {
         AmazonAffiliatesSearch search = new AmazonAffiliatesSearch(ACCESS_KEY_ID, SECRET_KEY, ASSOCIATES_ID);
