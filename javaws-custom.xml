@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+        	<bindings
+        	    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        	    xmlns="http://java.sun.com/xml/ns/jaxb"
+        	    version="1.0">
+        	    <bindings schemaLocation="../wsdl/PipelineListenerService.wsdl#types?schema1" node="/xs:schema">
+        <schemaBindings>
+    	            <package name="org.daisy.pipeline.ws.domain"/>
+    	        </schemaBindings>
+	        <bindings node="//xs:simpleType[@name='status']">
+    	                        <class ref="org.daisy.pipeline.execution.Status"/>
+    	                </bindings>
+	        <bindings node="//xs:complexType[@name='message']">
+    	                        <class ref="org.daisy.pipeline.ws.domain.Message"/>
+    	                </bindings>
+	    </bindings>
+        	</bindings>
