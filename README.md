@@ -6,11 +6,11 @@ as a processing & caching layer for some inventory providers who do not make an 
 
 This project contains several modules, each with a different function related to the Book MetaSearch App.
 
-- Book-MetaSearch-Api
+- [Book-MetaSearch-Api](https://github.com/tgrosinger/Book-MetaSearch-Backend/tree/master/Book-MetaSearch-Api)
 
    A RESTful web service to expose the data cached locally as well as translations of 3rd-party APIs
 
-- Book-MetaSearch-Audible-Data-Cacher
+- [Book-MetaSearch-Audible-Data-Cacher](https://github.com/tgrosinger/Book-MetaSearch-Backend/tree/master/Book-MetaSearch-Audible-Data-Cacher)
 
    A service designed to be run in a cron job to download the weekly lists from Audible, process
    the data, and store in a local database for consumption by the Book-MetaSearch-Api.
