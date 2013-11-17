@@ -24,4 +24,4 @@ target/
 *.ear
 
 # Project specific
-src/main/resources/api-keys.properties
+Book-MetaSearch-Api/config/api-keys.properties

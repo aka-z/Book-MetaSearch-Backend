@@ -1,69 +1,18 @@
-Book-MetaSearch-Amazon-Interface
-================================
+Book-MetaSearch-Backend
+=======================
 
-An intermediary interface web service between the Amazon Affiliates SOAP API and the Book MetaSearch app
+The Book MetaSearch App uses this service as both an API interface to other services, and
+as a processing & caching layer for some inventory providers who do not make an API available.
 
-API
----
+This project contains several modules, each with a different function related to the Book MetaSearch App.
 
-This interface currently only has two methods. Both methods share a common response which is just a serialized version of what Amazon returns.
-Depending on the item, there more or fewer fields than those shown in the example response below.
+- Book-MetaSearch-Api
 
-### ASIN Search
+   A RESTful web service to expose the data cached locally as well as translations of 3rd-party APIs
 
-Search for items using the Amazon ASIN number.
+- Book-MetaSearch-Audible-Data-Cacher
 
-    GET http://<hostname>:<port>/search?method=asin&q=<asin>
+   A service designed to be run in a cron job to download the weekly lists from Audible, process
+   the data, and store in a local database for consumption by the Book-MetaSearch-Api.
 
-### ISBN Search
-
-Search for items using the ISBN number.
-
-    GET http://<hostname>:<port>/search?method=isbn&q=<isbn>
-
-### Example Response
-
-    [
-        {
-            asin: "B0010SKUYM",
-            detailPageURL: "http://www.amazon.com/The-Name-Wind-Kingkiller-Chronicle-ebook...",
-            itemLinks: {
-                itemLink: [
-                    {
-                        description: "Technical Details",
-                        url: "http://www.amazon.com/The-Name-Wind-Kingkiller-Chronicle-ebook/..."
-                    },
-                    {
-                        description: "Add To Baby Registry",
-                        url: "http://www.amazon.com/gp/registry/baby/add-item.html..."
-                    },
-                    {
-                        description: "Add To Wedding Registry",
-                        url: "http://www.amazon.com/gp/registry/wedding/add-item.html..."
-                    },
-                    {
-                        description: "Add To Wishlist",
-                        url: "http://www.amazon.com/gp/registry/wishlist/add-item.html..."
-                    },
-                    {
-                        description: "Tell A Friend",
-                        url: "http://www.amazon.com/gp/pdp/taf/B0010SKUYM%3FSubscriptionId..."
-                    },
-                    {
-                        description: "All Customer Reviews",
-                        url: "http://www.amazon.com/review/product/B0010SKUYM..."
-                    },
-                    {
-                        description: "All Offers",
-                        url: "http://www.amazon.com/gp/offer-listing/B0010SKUYM..."
-                    }
-                ]
-            },
-            itemAttributes: {
-                author: [ "Patrick Rothfuss" ],
-                manufacturer: "DAW",
-                productGroup: "eBooks",
-                title: "The Name of the Wind: The Kingkiller Chronicle: Day One"
-            }
-        }
-    ]
+More services will be added as this project grows.

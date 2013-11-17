@@ -4,6 +4,8 @@ import net.grosinger.bookmetasearch.amazoninterface.http.SearchHandler;
 import org.apache.log4j.Logger;
 import org.eclipse.jetty.server.Server;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -14,10 +16,21 @@ public class HttpListener {
     private AmazonAffiliatesSearch searcher;
 
     public static void main(String[] args) {
-        InputStream propertiesFileStream = HttpListener.class.getResourceAsStream("/api-keys.properties");
+        if(args.length != 1) {
+            LOG.error("Must pass parameter path of api-keys.properties");
+            System.exit(1);
+        }
 
-        HttpListener webServer = new HttpListener(propertiesFileStream);
-        webServer.start();
+        try {
+            LOG.debug("Loading properties from " + args[0]);
+
+            InputStream propertiesFileStream = new FileInputStream(args[0]);
+            HttpListener webServer = new HttpListener(propertiesFileStream);
+            webServer.start();
+        } catch (FileNotFoundException e) {
+            LOG.error("Invalid properties file location", e);
+            System.exit(1);
+        }
     }
 
     public HttpListener(InputStream propertiesFileStream) {

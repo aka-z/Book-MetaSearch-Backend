@@ -11,6 +11,7 @@
         <fileSet>
             <directory>${project.basedir}/bin</directory>
             <outputDirectory>/</outputDirectory>
+            <lineEnding>unix</lineEnding>
             <includes>
                 <include>install.sh</include>
             </includes>
@@ -18,17 +19,19 @@
         <fileSet>
             <directory>${project.basedir}/bin</directory>
             <outputDirectory>/${project.artifactId}/bin</outputDirectory>
+            <lineEnding>unix</lineEnding>
             <includes>
-                <include>*.sh</include>
+                <include>uninstall.sh</include>
                 <include>book-metasearch-api</include>
             </includes>
         </fileSet>
         <fileSet>
             <directory>${project.basedir}/config</directory>
             <outputDirectory>/${project.artifactId}/config</outputDirectory>
+            <lineEnding>unix</lineEnding>
             <includes>
                 <include>environment.sh</include>
-                <include>log4j.properties</include>
+                <include>api-keys.properties.template</include>
             </includes>
         </fileSet>
         <fileSet>
