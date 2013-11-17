@@ -1,8 +1,8 @@
-package net.grosinger.bookmetasearch.amazoninterface.http;
+package net.grosinger.bookmetasearch.api.http;
 
 import com.ECS.client.jax.Item;
 import com.google.gson.Gson;
-import net.grosinger.bookmetasearch.amazoninterface.AmazonAffiliatesSearch;
+import net.grosinger.bookmetasearch.api.AmazonAffiliatesSearch;
 import org.apache.log4j.Logger;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;

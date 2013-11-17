@@ -45,7 +45,7 @@ function validateEnvironment {
        return 1
    fi
 
-   javaCommandLine="${javaExe} -server ${JAVA_OPTS} -cp \"${serviceHome}/jars/*\" net.grosinger.bookmetasearch.amazoninterface.HttpListener ${serviceHome}/config/api-keys.properties"
+   javaCommandLine="${javaExe} -server ${JAVA_OPTS} -cp \"${serviceHome}/jars/*\" net.grosinger.bookmetasearch.api.HttpListener ${serviceHome}/config/api-keys.properties"
    echo $javaCommandLine
 }
 
